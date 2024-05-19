@@ -1,0 +1,170 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build directories
+dist/
+build/
+out/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.class
+
+# Java Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Ruby
+*.gem
+*.rbc
+.ruby-version
+.ruby-gemset
+
+# Rails
+*.rbc
+*.rvmrc
+.project
+tmp/
+log/
+!.keep
+db/*.sqlite3
+db/*.sqlite3-journal
+public/system
+coverage/
+spec/tmp
+*.orig
+rerun.txt
+pickle-email-*.html
+config/initializers/secret_token.rb
+config/secrets.yml
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+vendor/
+
+# Rust
+/target/
+
+# Miscellaneous
+*.swp
+*.swo
+*.bak
+*.tmp
+*.temp
+*.orig
+*.seed
+*.pid
+*.seed
+*.pid
+*.cover
+
+# VS Code
+.vscode/
+.history/
+
+# JetBrains
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Linux
+*~
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.gz
+*.bz2
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.crash
+*.log
+*.tfplan
+*.tfvars
+.override
