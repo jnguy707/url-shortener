@@ -14,6 +14,20 @@ app = FastAPI()
 async def root():
     return {"message:": "Hello World"}
 
+
+'''
+Considerations
+-Index Queries
+-Pagination
+'''
+@app.get("/list-urls")
+async def get_list_urls():
+    try:
+        return list(URLModel.scan())
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+
 @app.post("/shorten-url")
 async def create_short_url(url_request: URLRequest):
 
@@ -35,3 +49,4 @@ async def create_short_url(url_request: URLRequest):
     url_model.save()
 
     return {"short_url": f"http://{host}:{port}/{short_id}"}
+
