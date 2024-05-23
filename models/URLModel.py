@@ -1,19 +1,13 @@
-import os
 from pynamodb.models import Model
 from pynamodb.attributes import UnicodeAttribute
 from pynamodb.connection.base import Connection
-
+import os
 import uuid
 import random
 from dotenv import load_dotenv
 
-from dotenv import load_dotenv
-load_dotenv()  # Load environment variables from .env file
-# Verify that the environment variables are loaded correctly
-print("AWS_ACCESS_KEY_ID:", os.getenv('AWS_ACCESS_KEY_ID'))
-print("AWS_SECRET_ACCESS_KEY:", os.getenv('AWS_SECRET_ACCESS_KEY'))
-print("AWS_REGION:", os.getenv('AWS_REGION'))
-print("DYNAMODB_ENDPOINT_URL:", os.getenv('DYNAMODB_ENDPOINT_URL'))
+# TODO: Decentralized Credentials
+load_dotenv()
 
 class URLModel(Model):
     class Meta:
@@ -28,7 +22,7 @@ class URLModel(Model):
 
     def create_short_id() -> str:
         rand_length = random.randint(4,12)
-        return str(uuid.uuid4())
+        return str(uuid.uuid4())[:rand_length]
     
 # Table Check
 if not URLModel.exists():
