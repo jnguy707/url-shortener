@@ -1,9 +1,10 @@
 from fastapi import FastAPI, HTTPException
 import uuid
-from requests.URLRequest import URLRequest
+from api.requests.URLRequest import URLRequest
 from models.URLModel import URLModel
+import os 
 
-# TODO: Configuration File/External
+# TODO: Configuration File/Decentralized Configuration
 from typing import Final
 host: Final[str] = "localhost"
 port: Final[str] = "8000"
@@ -16,7 +17,7 @@ async def root():
 
 
 '''
-Considerations
+Future Considerations
 -Index Queries
 -Pagination
 '''
