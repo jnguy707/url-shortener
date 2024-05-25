@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 import uuid
 from api.requests.URLRequest import URLRequest
 from models.URLModel import URLModel
@@ -51,3 +52,12 @@ async def create_short_url(url_request: URLRequest):
 
     return {"short_url": f"http://{host}:{port}/{short_id}"}
 
+@app.get("/{short_url}")
+async def get_url(short_url: str):
+    try:
+        url_model = URLModel.get(short_url)
+        return RedirectResponse(url=url_model.original_url, status_code=302)
+    except URLModel.DoesNotExist:
+        return RedirectResponse(url=f"http://{host}:{port}/status-code/404", status_code=404)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
